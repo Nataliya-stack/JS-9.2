@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
+  </script>
+  <style>
+        body {             
+            background-image: url(./img/foto.png);
+            background-repeat: no-repeat;
+            background-position: 45% center;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;              
+            align-items: center;
+            padding-left: 0; 
+            padding-right: 30%;
+            box-sizing: border-box;   
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            width: 100%;
+        }
+
+        h1 {
+          font-family: fantasy;
+          font-size: 100px; 
+          background: linear-gradient(to left, #ffffff, #ff9a9e, #fad0c4, #a1c4fd);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color: transparent;      
+        }    
+
+        .conteiner {
+          display: flex;
+          align-items: center; 
+          justify-content: space-between; 
+          width: 100%; 
+          max-width: 900px; 
+          margin: 20px auto;
+        }
+
+        .input-grup {
+          display: flex;
+          gap: 10px; 
+        }
+
+        input, .total {
+          padding: 8px;
+          flex-grow: 1; 
+          font-size: 18px;
+          border: 2px solid #fe9da0;
+          border-radius: 6px;
+        }
+        
+        button {
+          background-color: #fe9da0;
+          font-size: 18px;
+          border-radius: 6px;
+          padding: 8px 16px;
+          white-space: nowrap;       
+        }
+
+        label {
+          font-size: 18px;
+          color: #fe9da0;
+        }
+
+        .box {
+          border: 2px solid #fe9da0;
+          border-radius: 6px;
+          width: 50vw;
+          height: 45vh;
+          margin: 10px;
+          text-align: center;
+        }
+       
+        #mensaje {
+          color: red; 
+          font-weight: bold; 
+          min-height: 1.2em; 
+        }   
+        
+        @media (max-width: 768px) {
+          body {
+            padding-right: 0 !important;
+            padding: 15px !important;
+          }
+          h1 {
+            font-size: 45px !important;
+            text-align: center;
+          }
+          .conteiner {
+            flex-direction: column;
+            align-items: stretch !important;
+            gap: 10px;
+          }
+          .input-grup {
+            flex-direction: column;
+          }
+          input, button, .total {
+            width: 100% !important;
+            box-sizing: border-box;
+          }
+          .box {
+            width: 100% !important;
+            height: 40vh !important;
+            margin: 15px 0 !important;
+          }
+        }
+  </style>
+  <title>JS - 9.2</title>
+</head>
+  
+<body>      
+    
+      <h1>LISTA DE COMPRAS</h1>
+            
+      <div class="conteiner">
+        <label for="producto-input">Producto que deseas agregar:</label>
+          <div class="input-grup">
+            <input type="text" id="producto-input" placeholder="Ejemplo: Pan">
+            <input type="number" id="presio-input" placeholder="Ejemplo: 1.5 euro">
+            <button onclick="agregar()">Agregar</buttonlass=>
+          </div>
+      </div>
+
+     
+      <div>
+        <div class="box" id="list">
+          <ul id="lista-productos"></ul>
+        </div>
+        <div class="input-grup">
+          <input type="number" id="pos-input" placeholder="Numero producto que deseas eliminar">
+          <button onclick="eliminarPorPosicion()">Eliminar producto de la lista</button>        
+        </div>
+
+        <div class="conteiner gap-4">
+          <button onclick="totalCompras()">Total Compras</button>
+          <p class="total h-11" id="sumaTotal"></p>
+        </div>
+      </div>
+    
+      <div id="mensaje"></div>         
+
+      <button onclick="vaciarCarrito()">Vaciar el carrito</button>           
+  
+  <script src="./js/app.js"></script>
+</bodyclass=>
+
+</html>
